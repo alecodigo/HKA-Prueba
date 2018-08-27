@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+
+        <record id="numero_id_cliente_sequence" model="ir.sequence">
+            <field name="name">ID Clientes</field>
+            <field name="prefix"></field>
+            <field name="code">seq_id_clientes</field>
+            <field name="padding">10</field>
+        </record>
+
+    </data>
+</openerp>

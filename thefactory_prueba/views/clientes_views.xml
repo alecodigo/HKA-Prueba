@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<odoo>
+	<!-- PARA LA VISTA TREE -->
+	<record id="thefactory_clientes_tree" model="ir.ui.view">
+        <field name="name">thefactory.clientes.tree</field>
+        <field name="model">thefactory.clientes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="id_cliente"/>
+                <field name="nombre"/>
+                <field name="apellido"/>
+                <field name="cedula"/>
+                <field name="fecha_nacimiento"/>
+                <field name="telefono"/>
+                <field name="email"/>
+                <field name="estatus"/>                
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_thefactory_tree" model="ir.actions.act_window">
+        <field name="name">Clientes</field>
+        <field name="res_model">thefactory.clientes</field>
+        <field name="view_type">tree</field>
+    </record>
+
+
+    <!-- PARA LA VISTA FORMULARIO -->
+    <record id="view_email_server_form" model="ir.ui.view">
+        <field name="name">thefactory.clientes.form</field>
+        <field name="model">thefactory.clientes</field>
+        <field name="arch" type="xml">
+         	<form string="Cliente">
+                <sheet>
+                    <notebook string="Datos del Cliente">
+                        <page string="Datos Básicos">
+                            <group col="4">
+                		        <field name="id_cliente"/>
+                                <field name="nombre"/>
+                		        <field name="apellido"/>
+                                <field name="cedula"/>
+                		        <field name="fecha_nacimiento"/>
+                                <field name="telefono"/>
+                                <field name="email"/>
+                		        <field name="estatus"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    <group>
+                        <separator string='Descripción de uso' colspan="4"/>
+                        <p> LOS CAMPOS EN COLOR VIOLETA SON OBLIGATORIOS Y NO SE PERMITE INGRESAR LETRAS EN LOS CAMPOS NUMÉRICOS</p>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_thefactory_clientes">
+        <field name="name">Clientes</field>
+        <field name="res_model">thefactory.clientes</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--  -->
+    <record id="view_email_server_search" model="ir.ui.view">
+        <field name="name">thefactory.clientes.search</field>
+        <field name="model">thefactory.clientes</field>
+            <field name="arch" type="xml">
+                <search string="Busqueda Rapida">
+                    <field name="id_cliente" string="ID"/>
+                    <separator/>
+                    <filter name="group_user" string="ID" domain="[]"  context="{'group_by':'id_cliente'}" help="ID de cliente."/>
+                </search>
+            </field>
+        </record>
+
+
+<menuitem id="menu_principal" name="Cartera de Clientes"/>
+<menuitem id="menu_thefactory_cartera" name ="Clientes" parent="menu_principal" action="action_thefactory_clientes"/>
+
+
+
+
+
+
+
+
+</odoo>
