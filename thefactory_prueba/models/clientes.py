@@ -39,6 +39,7 @@ class TheFactoryClientes(models.Model):
                 raise ValidationError("El teléfono sólo puede contener números")
 
 
+    #Se reescribe el método create 
     @api.model
     def create(self, vals):
         seq = self.env['ir.sequence'].next_by_code('seq_id_clientes') or '/'
