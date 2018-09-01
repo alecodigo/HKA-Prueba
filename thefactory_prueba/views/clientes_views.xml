@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<!-- PARA LA VISTA TREE -->
 	<record id="thefactory_clientes_tree" model="ir.ui.view">
@@ -77,7 +77,8 @@
 
 
 <menuitem id="menu_principal" name="Cartera de Clientes"/>
-<menuitem id="menu_thefactory_cartera" name ="Clientes" parent="menu_principal" action="action_thefactory_clientes"/>
+<menuitem id="menu_clientes" name ="Clientes" parent="menu_principal"/>
+<menuitem id="menu_crud_clientes" name ="Cartera de Clientes" parent="menu_clientes" action="action_thefactory_clientes"/>
 
 
 
